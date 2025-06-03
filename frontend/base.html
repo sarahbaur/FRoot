@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRoot</title>
+    <link rel="icon" type="image/x-icon" href="/frontend/images/favicon.png">
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+    <div id="fruit-container"></div>
+    <div id="start-overlay"></div>
+    <div class="navbar">
+        <div class="logo-container">
+            <a href="base.html" style="text-decoration:none"><img class="logo_nav" src="/frontend/images/tree_logo.png" alt="stylized fruit tree logo"></a>
+            <a href="base.html" style="text-decoration:none"><span class="brand_name">FR<span class="brand_name_small">oot</span></span></a>
+        </div>
+        <div class="nav-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <a href="base.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+        </div>
+    </div>
+    <div class="background">
+        <form id="wordQueryForm" class="flex-container" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="introduction">
+                <h1>FR<span class="h1-light">ench</span> Roots</h1>
+                <h2>Enter a French word and its meaning in the search bars below and start exploring!</h2>
+            </div>
+            <div class="inputDiv">
+                <label for="lemmaInput" class="label_text" >Please input the word you want to look for:<br></label>
+                <input type="text" id="lemmaInput" name="lemma" placeholder="maison" class="placeholder_text" required>
+            </div>
+            <div class="inputDiv">
+                <label for="meaningInput" class="label_text">Please tell us the meaning of the word you are looking for:</label>
+                <input type="text" id="meaningInput" name="meaning" placeholder="Habitation, logement (qu'il s'agisse ou non d'un bâtiment entier)." class="placeholder_text" required>
+                <br>
+                <br>
+                <br>
+                <button type="submit" id="submitButton">Start your query!</button>
+            </div>
+        </form>
+    </div>
+    <div class="analyzationDiv">
+        <h1>TOP MATCHES</h1>
+        <p class="label_text">The spellings of the following words are closest to: <span id="inputLemma"></span></p>
+        <div class="spinner" style="display:none;"></div>
+        <!-- Add container for lemma results -->
+        <div class="lemmaResults">
+            <div class="lemmaResultsContainer"></div>
+        </div>
+        <div class="divider"> </div>
+        <!-- Add container for meaning results -->
+        <p class="label_text">The following meanings are closest to: <span id="inputMeaning"></span></p>
+        <div class="spinner" style="display:none;"></div>
+        <div class="meaningResults"></div>
+        <div class="divider"> </div>
+    </div>
+    <footer id="footer">
+        <div class="flex-container">
+            <p>&copy; 2024 FRoot. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Link to JavaScript file -->
+    <script src="/frontend/script.js"></script>
+    <script src="/frontend/navbar.js"></script>
+    <script>
+        // Wait for the DOM to be loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the button by its ID
+            var scrollToFooterButton = document.getElementById('submitButton');
+
+            // Listen for a click event on the button
+            scrollToFooterButton.addEventListener('click', function(event) {
+                setTimeout(function() {
+                    document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+                }, 400); // delay scrolling until after the form begins submitting
+            });
+        });
+    </script>
+</body>
+</html>

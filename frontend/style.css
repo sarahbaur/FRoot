@@ -1,0 +1,349 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.brand-container {
+  text-align: center;
+  font-family: 'Arial', sans-serif; /* Example font */
+}
+
+.brand-container:hover {
+  cursor: pointer;
+}
+
+
+/* Define the falling animation to fall beyond screen */
+@keyframes fall {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(200vh); }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Aligns items to the left and right */
+  align-items: center; /* Centers items vertically */
+  padding: 1.5rem 5%; /* Apply padding uniformly on all sides */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center; /* This ensures that the logo and the text are aligned */
+}
+
+.logo_nav {
+  height: 10vh;
+  width: 10vh; /* Adjust as needed */
+  padding-right: 1.5rem;
+}
+
+.brand_name {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #2f2f2f;
+  align-self: center; /* Center the text vertically */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.brand_name_small {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #a99c90;
+  align-self: center; /* Center the text vertically */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.brand-container:hover .brand_name,
+.brand-container:hover .brand_name_small {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #c97c65;
+}
+
+/* Hamburger Icon */
+.nav-icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px; /* Icon width */
+  height: 30px; /* Icon height */
+  align-self: center; /* Center the icon vertically */
+  margin-right: 2%; /* Align to the right */
+}
+
+.nav-icon div {
+  background-color: #333;
+  height: 3px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+/* Nav links hidden by default */
+.nav-links {
+  font-weight: bold;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Styling for the links when nav is expanded */
+.nav-links a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #333333;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #c17a64;
+  font-weight: bold;
+}
+
+/* Expanded nav */
+.nav-active {
+  display: flex;
+  position: fixed;
+  left: 35vw;
+  width: 50%;
+  height: 15%;
+  background-color: white;
+  flex-direction: row;
+  justify-content: space-evenly; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  transition: all 0.10s ease-in-out; /* Smooth transition for the menu */
+  z-index: 10; /* Ensure it's above other elements */
+}
+
+.nav-active .nav-links {
+  display: flex;
+}
+
+.background {
+  background-color: #cfd9d9;
+  padding-bottom: 3%;
+}
+
+/* flex container wraps introduction and inputDiv */
+.flex-container {
+  display: flex; /* Enable flex container */
+  flex-direction: column; /* Stack children vertically instead of horizontally */
+  padding-left: 5%;
+}
+
+/* Make sure the text content appears above the overlay */
+.introduction, .inputDiv, .analysis {
+  position: relative;
+  z-index: 2; /* Higher z-index to be above the overlay */
+}
+
+.introduction h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #2f2f2f;
+}
+
+.h1-light {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #7c8d8d;
+}
+
+.introduction h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #212121;
+}
+
+.label_text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #212121;
+}
+
+.placeholder_text {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+  color: #7c8d8d;
+}
+
+.inputDiv {
+  padding-bottom: 2rem;
+}
+
+/* Styling for the input and button */
+.inputDiv input[type="text"] {
+  border: 3px solid #d08067;
+  color: #2f2f2f;
+  background-color: #ffffff;
+  font-size: 1.25rem;
+  padding: 15px;
+  width: 70%;
+}
+
+.inputDiv button {
+  border: 3px solid #ffffff;
+  width: 30%;
+  padding: 15px;
+  background-color: #c97c65;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.inputDiv button:hover {
+  background-color: #979d9d;
+}
+
+/* CSS for the disabled button */
+.buttonDisabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* Styling for the word analysis results */
+.analysis {
+  background: rgba(255, 255, 255, 0.9);
+  width: 50%;
+  padding: 5%; /* unified padding for top and left */
+  padding-right: 0; /* remove extra padding on the right if not needed */
+}
+
+.analysis h3, .analysis p {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+/* Additional CSS to style the results */
+.analyzationDiv {
+  padding: 2rem 5%;
+  margin-top: 2rem; /* Space above the results */
+}
+
+.lemmaResultsContainer, .meaningResultsContainer {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack children vertically */
+  align-items: flex-start; /* Align children to the left */
+}
+
+.lemmaResults ol, .meaningResults ol {
+  /* ... other styles ... */
+  margin-left: 0; /* Reset margin-left */
+  padding: 0; /* Reset padding */
+  border-right: 5px solid #c17a64; /* Maintain the right border */
+}
+
+.lemmaResults li, .meaningResults li {
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: calc(100% - 1rem); /* Subtract the total amount of horizontal padding and border */
+  background-color: #bcc7c7;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem; /* Maintain padding */
+  margin-bottom: 0.5rem; /* Maintain margin between items */
+  /* ... other styles ... */
+}
+
+.lemmaResults li:hover, .meaningResults li:hover {
+  background-color: #d5d5d5; /* Change background on hover */
+}
+
+/* Style for the additional info */
+.more-info {
+  display: none;
+  padding: 10px;
+  background-color: white;
+  border: 5px solid #b5c0c0;
+  margin-top: 5px;
+  width: calc(100% - 10px); /* assuming there is 10px padding on both sides */
+  box-sizing: border-box; /* include padding and border in the width calculation */
+}
+
+/* Style for the list item when active */
+li.active .more-info {
+  display: block; /* Show the more info content when the list item is active */
+}
+
+li.active {
+  background-color: #e5e5e5; /* Different background color for the active item */
+  padding-bottom: 2%;
+}
+
+/* Styling for the about */
+.background_about {
+  background-color: #ebefef;
+  padding-bottom: 3%;
+}
+
+.textDiv {
+  padding-left: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.spinner {
+  display: inline-block;
+  width: 30px; /* Smaller width */
+  height: 30px; /* Smaller height */
+  border: 2px solid #bcc9c9; /* Thinner border */
+  border-radius: 50%;
+  border-top-color: #c76a4d;
+  animation: spin 1s infinite ease-in-out;
+  margin-top: 2em;
+}
+
+@keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
+
+.divider {
+  border-bottom: 1px solid #ffffff;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#inputLemma, #inputMeaning {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #c76a4d;
+}
+
+/* flex container wraps introduction and inputDiv */
+.about-container {
+  display: flex; /* Enable flex container */
+  flex-direction: column; /* Stack children vertically instead of horizontally */
+  padding: 6%;
+}
+
+.about-container p {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #212121;
+}
+
+.about-container h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #798889;
+  margin-top: -2%;
+  margin-bottom: 3%;
+}
+
+.about-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #c1694d;
+  text-transform: uppercase;
+  margin-bottom: 0.3%;
+}
