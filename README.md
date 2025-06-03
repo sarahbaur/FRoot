@@ -33,8 +33,7 @@ $ flask run   # ➜ http://127.0.0.1:5000
 ## Repo layout
 
 ```
-backend/
-  database/
+backend/database/
     db_scripts/            # SQL DDL & population helpers
     data/                  # sample CSV/JSON slices (see note above)
 frontend/                  # JS + HTML/CSS assets
