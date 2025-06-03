@@ -1,0 +1,13 @@
+{
+    "e4476731-1f2f-4422-b109-877500ee4351": {
+        "article": {
+            "main_lemma_id": "7507d5ce-094e-4513-b037-c6deaa8f0975",
+            "etymology": "<passage>DEAFplus</passage>\n\nEmprunt au lt. <cited-word index=\"e\" language=\"lt.\">inclitus</cited-word> \u201cc\u00e9l\u00e8bre\u201d, <evidence><siglum>ThesLL</siglum> <text-reference>7<sup>1</sup>,957</text-reference></evidence> (cp.2em. 14es. AalmaR 5802 <cited-word>inclitus, -a, -um</cited-word>: <cited-word>nobles</cited-word>). \u2013 Noter que le traducteur Bersuire ne reprend pas ce terme directement du passage traduit.\n"
+        },
+        "article_lemma": [
+            {
+                "lemma_id": "7507d5ce-094e-4513-b037-c6deaa8f0975"
+            }
+        ]
+    }
+}
