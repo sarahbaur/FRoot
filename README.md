@@ -13,8 +13,11 @@ This project was created for the University of Zurich course *Language Technolog
 0
 ---
 
-### Demo 
+## Demo 
+Responsive landing screen design for the interface:
 ![Quick demo](assets/froot_vid_1.mov)
+
+User interface design and search query output:
 ![Quick demo](assets/froot_vid_2.mov)
 
 
