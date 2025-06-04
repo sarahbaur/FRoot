@@ -13,6 +13,11 @@ This project was created for the University of Zurich course *Language Technolog
 0
 ---
 
+### Demo 
+![Quick demo](assets/froot_vid_1.mov)
+![Quick demo](assets/froot_vid_2.mov)
+
+
 ## Quick start
 
 ```bash
